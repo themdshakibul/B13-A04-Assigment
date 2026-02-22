@@ -36,9 +36,9 @@ calculateCount();
 // all btn
 function toggle(id) {
   //   add color
-  allFileterBtn.classList.add("btn", "text-black", "text-xl");
-  interviewFilterBtn.classList.add("btn", "text-black", "text-xl");
-  rejectedFilterBtn.classList.add("btn", "text-black", "text-xl");
+  allFileterBtn.classList.add("btn", "text-black");
+  interviewFilterBtn.classList.add("btn", "text-black");
+  rejectedFilterBtn.classList.add("btn", "text-black");
 
   // remove color
   allFileterBtn.classList.remove("bg-blue-500", "text-white");
@@ -48,5 +48,10 @@ function toggle(id) {
   let selected = document.getElementById(id);
 
   selected.classList.remove("btn", "text-black");
-  selected.classList.add("bg-blue-500", "text-white");
+  selected.classList.add(
+    "bg-blue-500",
+    "text-white",
+    "text-xl",
+    "font-semibold",
+  );
 }
