@@ -1,5 +1,6 @@
 // interview list mt arry
 let interviewList = [];
+console.log(interviewList);
 let rejectedList = [];
 let currentCount = "all";
 let counts = [];
@@ -23,6 +24,7 @@ const allcardSections = document.getElementById("allCard");
 const mainContianers = document.querySelector("main");
 // filter card sections
 const filterSection = document.getElementById("filterSeciton");
+const rejectedSection = document.getElementById("rejectedScetion");
 
 function calculateCount() {
   total.innerText = allcardSections.children.length;
@@ -59,16 +61,20 @@ function toggle(id) {
     "text-xl",
     "font-semibold",
   );
+
   if (id == "interview-filter-btn") {
     allcardSections.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    rejectedSection.classList.add("hidden");
   } else if (id == "all-filter-btn") {
     allcardSections.classList.remove("hidden");
     filterSection.classList.add("hidden");
+    rejectedSection.classList.add("hidden");
   } else if (id == "rejected-filter-btn") {
     allcardSections.classList.add("hidden");
-    filterSection.classList.remove("hidden");
-    randerRejected();
+    filterSection.classList.add("hidden");
+    rejectedSection.classList.remove("hidden");
+    // randerRejected();
   }
 }
 
@@ -83,6 +89,8 @@ mainContianers.addEventListener("click", function (evnet) {
     const peragraph = parentNode.querySelector(".peragraph").innerText;
 
     parentNode.querySelector(".notApplied").innerText = "INTERVIEW";
+    
+    const count = document.innerText = "count"
 
     const JobInfo = {
       jobName,
@@ -105,9 +113,16 @@ mainContianers.addEventListener("click", function (evnet) {
     rejectedList = rejectedList.filter(
       (item) => item.jobName != JobInfo.jobName,
     );
-    calculateCount();
+    console.log(rejectedList.length, "length");
+    randerRejected();
 
+    if (currentCount == "interview-filter-btn") {
+    }
+    calculateCount();
     randerInterview();
+    randerRejected();
+
+    // randerInterview();
   } else if (evnet.target.classList.contains("rejected-btn")) {
     const parentNode = evnet.target.parentNode.parentNode;
     const jobName = parentNode.querySelector(".jobName").innerText;
@@ -117,6 +132,8 @@ mainContianers.addEventListener("click", function (evnet) {
     const peragraph = parentNode.querySelector(".peragraph").innerText;
 
     parentNode.querySelector(".notApplied").innerText = "REJECTED";
+
+
 
     const JobInfo = {
       jobName,
@@ -135,23 +152,32 @@ mainContianers.addEventListener("click", function (evnet) {
 
     if (!planExistiong) {
       rejectedList.push(JobInfo);
+    } else {
+      rejectedList = rejectedList.filter(
+        (item) => item.jobName != JobInfo.jobName,
+      );
     }
     interviewList = interviewList.filter(
       (item) => item.jobName != JobInfo.jobName,
     );
-
-    if (currentCount == "interview-filter-btn") {
-      randerInterview();
-    }
-
     calculateCount();
+    randerInterview();
+    randerRejected();
   }
 });
 
 // randerInterview list
 function randerInterview() {
+  if (interviewList.length == 0) {
+    filterSection.innerHTML = `
+         <div>
+          <p>Node data foud</p>
+        </div>
+    `;
+    return;
+  }
   filterSection.innerHTML = "";
-
+  console.log(interviewList);
   for (let interview of interviewList) {
     console.log(interview);
     let div = document.createElement("div");
@@ -209,7 +235,16 @@ function randerInterview() {
 
 // randerRejected list
 function randerRejected() {
-  filterSection.innerHTML = "";
+  if (rejectedList.length == 0) {
+    rejectedSection.innerHTML = `
+         <div>
+          <p>Node data foud</p>
+        </div>
+    `;
+    return;
+  }
+  rejectedSection.innerHTML = "";
+  console.log(rejectedList.length);
 
   for (let rejected of rejectedList) {
     console.log(rejected);
@@ -262,6 +297,6 @@ function randerRejected() {
             <img src="./assets/delet-btn.png" alt="" class="w-12" />
           </div>
     `;
-    filterSection.appendChild(div);
+    rejectedSection.appendChild(div);
   }
 }
