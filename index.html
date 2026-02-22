@@ -12,13 +12,18 @@
       type="text/css"
     />
 
+    <!-- fivicon -->
+    <link rel="icon" href="https://img.icons8.com/liquid-glass/48/resume.png" />
+
     <!-- title -->
     <title>Assigment 04</title>
   </head>
-  <body class="container mx-auto mt-10 bg-[#F8FAFC]">
+  <body class="container mx-auto mt-10 bg-[#F8FAFC] px-3">
     <header class="">
-      <h2 class="text-5xl text-[#002C5C] font-bold">Job Application Tracker</h2>
-      <nav class="grid grid-cols-3 gap-10 py-10 text-3xl">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl text-[#002C5C] font-bold">
+        Job Application Tracker
+      </h2>
+      <nav class="grid grid-cols-1 md:grid-cols-3 gap-10 py-10 text-3xl">
         <!-- total -->
         <div
           class="bg-[#F1F2F4] p-5 space-y-2 rounded-md border-gray-200 border-2"
@@ -86,15 +91,35 @@
 
       <!-- all filter btn -->
       <section id="filterSeciton" class="hidden">
-        <div>
-          <p>Node data foud</p>
+        <div
+          class="flex flex-col gap-3 items-center justify-center py-40 border-2 border-gray-300 mb-10 rounded-md bg-base-200"
+        >
+          <img src="./assets/document.png" alt="" class="w-fit" />
+          <div class="flex flex-col items-center">
+            <h2 class="text-4xl font-semibold text-[#002C5C]">
+              No jobs available
+            </h2>
+            <p class="text-xl font-semibold text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
         </div>
       </section>
 
       <!-- rejected section -->
       <section id="rejectedScetion" class="hidden">
-        <div>
-          <p>Node data foud</p>
+        <div
+          class="flex flex-col gap-3 items-center justify-center py-40 border-2 border-gray-300 mb-10 rounded-md bg-base-200"
+        >
+          <img src="./assets/document.png" alt="" class="w-fit" />
+          <div class="flex flex-col items-center">
+            <h2 class="text-4xl font-semibold text-[#002C5C]">
+              No jobs available
+            </h2>
+            <p class="text-xl font-semibold text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
         </div>
       </section>
 
@@ -102,7 +127,7 @@
       <section id="allCard">
         <!-- card 1 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -132,13 +157,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn hover:bg-green-500 hover:text-white hover:border-none btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn hover:bg-red-500 hover:text-white hover:border-none btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -147,13 +172,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 2 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -183,13 +208,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn hover:bg-green-500 hover:text-white hover:border-none btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn hover:bg-red-500 hover:text-white hover:border-none btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -198,13 +223,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 3 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -234,13 +259,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -249,13 +274,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 4 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -283,13 +308,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -298,13 +323,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 5 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -333,13 +358,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -348,13 +373,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 6 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -385,13 +410,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -400,13 +425,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 7 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -435,13 +460,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -450,13 +475,13 @@
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
 
         <!-- card 8 -->
         <div
-          class="cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between"
+          class="cards bg-[#f0f0f0d9] border-l-8 border-gray-500/70 p-10 rounded-md mb-10 flex justify-between"
         >
           <!-- part 1 -->
           <div class="space-y-5">
@@ -487,13 +512,13 @@
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -501,8 +526,8 @@
           </div>
 
           <!-- part 2 delet btn -->
-          <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+          <div class="delet-btn text-3xl">
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
         </div>
       </section>

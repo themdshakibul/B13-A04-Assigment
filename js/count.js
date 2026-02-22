@@ -1,6 +1,5 @@
 // interview list mt arry
 let interviewList = [];
-console.log(interviewList);
 let rejectedList = [];
 let currentCount = "all";
 let counts = [];
@@ -60,6 +59,7 @@ function toggle(id) {
     "text-white",
     "text-xl",
     "font-semibold",
+    "py-4",
   );
 
   if (id == "interview-filter-btn") {
@@ -74,7 +74,6 @@ function toggle(id) {
     allcardSections.classList.add("hidden");
     filterSection.classList.add("hidden");
     rejectedSection.classList.remove("hidden");
-    // randerRejected();
   }
 }
 
@@ -89,8 +88,6 @@ mainContianers.addEventListener("click", function (evnet) {
     const peragraph = parentNode.querySelector(".peragraph").innerText;
 
     parentNode.querySelector(".notApplied").innerText = "INTERVIEW";
-    
-    const count = document.innerText = "count"
 
     const JobInfo = {
       jobName,
@@ -99,8 +96,6 @@ mainContianers.addEventListener("click", function (evnet) {
       notApplied: "INTERVIEW",
       peragraph,
     };
-
-    console.log(JobInfo);
 
     // check list
     const planExistiong = interviewList.find(
@@ -113,8 +108,7 @@ mainContianers.addEventListener("click", function (evnet) {
     rejectedList = rejectedList.filter(
       (item) => item.jobName != JobInfo.jobName,
     );
-    console.log(rejectedList.length, "length");
-    randerRejected();
+    // randerRejected();
 
     if (currentCount == "interview-filter-btn") {
     }
@@ -133,8 +127,6 @@ mainContianers.addEventListener("click", function (evnet) {
 
     parentNode.querySelector(".notApplied").innerText = "REJECTED";
 
-
-
     const JobInfo = {
       jobName,
       jobTitle,
@@ -142,8 +134,6 @@ mainContianers.addEventListener("click", function (evnet) {
       notApplied: "REJECTED",
       peragraph,
     };
-
-    console.log(JobInfo);
 
     // check list
     const planExistiong = rejectedList.find(
@@ -170,19 +160,27 @@ mainContianers.addEventListener("click", function (evnet) {
 function randerInterview() {
   if (interviewList.length == 0) {
     filterSection.innerHTML = `
-         <div>
-          <p>Node data foud</p>
+        <div
+          class="flex flex-col gap-3 items-center justify-center py-40 border-2 border-gray-300 mb-10 rounded-md bg-base-200"
+        >
+          <img src="./assets/document.png" alt="" class="w-fit" />
+          <div class="flex flex-col items-center">
+            <h2 class="text-4xl font-semibold text-[#002C5C]">
+              No jobs available
+            </h2>
+            <p class="text-xl font-semibold text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
         </div>
     `;
     return;
   }
   filterSection.innerHTML = "";
-  console.log(interviewList);
   for (let interview of interviewList) {
-    console.log(interview);
     let div = document.createElement("div");
     div.className =
-      "cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between";
+      "cards bg-[#f0f0f0d9] border-l-8 border-green-500/70 p-10 rounded-md mb-10 flex justify-between ";
     div.innerHTML = `
         <!-- part 1 -->
           <div class="space-y-5">
@@ -200,7 +198,7 @@ function randerInterview() {
             </p>
 
             <button
-              class="notApplied btn btn-soft text-xl btn-2xl text-[#002C5C]"
+              class="notApplied bg-green-500 text-white btn btn-soft text-xl btn-2xl"
             >
               ${interview.notApplied}
             </button>
@@ -211,13 +209,13 @@ function randerInterview() {
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none  border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg  hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -226,7 +224,7 @@ function randerInterview() {
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
     `;
     filterSection.appendChild(div);
@@ -237,20 +235,28 @@ function randerInterview() {
 function randerRejected() {
   if (rejectedList.length == 0) {
     rejectedSection.innerHTML = `
-         <div>
-          <p>Node data foud</p>
+       <div
+          class="flex flex-col gap-3 items-center justify-center py-40 border-2 border-gray-300 mb-10 rounded-md bg-base-200"
+        >
+          <img src="./assets/document.png" alt="" class="w-fit" />
+          <div class="flex flex-col items-center">
+            <h2 class="text-4xl font-semibold text-[#002C5C]">
+              No jobs available
+            </h2>
+            <p class="text-xl font-semibold text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
         </div>
     `;
     return;
   }
   rejectedSection.innerHTML = "";
-  console.log(rejectedList.length);
 
   for (let rejected of rejectedList) {
-    console.log(rejected);
     let div = document.createElement("div");
     div.className =
-      "cards bg-[#f0f0f0d9] border-2 border-gray-200 p-10 rounded-md mb-10 flex justify-between";
+      "cards bg-[#f0f0f0d9] border-l-8 border-red-500/70 p-10 rounded-md mb-10 flex justify-between";
     div.innerHTML = `
         <!-- part 1 -->
           <div class="space-y-5">
@@ -268,7 +274,7 @@ function randerRejected() {
             </p>
 
             <button
-              class="notApplied btn btn-soft text-xl btn-2xl text-[#002C5C]"
+              class="notApplied btn btn-soft bg-red-500 text-white text-xl btn-2xl"
             >
               ${rejected.notApplied}
             </button>
@@ -279,13 +285,13 @@ function randerRejected() {
             <!-- btn -->
             <div class="flex gap-5">
               <button
-                class="interview-btn btn btn-lg border-2 border-green-700 text-xl text-green-500 px-6"
+                class="interview-btn btn btn-lg hover:bg-green-500 hover:text-white hover:border-none border-2 border-green-700 text-xl text-green-500 px-6"
               >
                 INTERVIEW
               </button>
 
               <button
-                class="rejected-btn btn btn-lg border-2 border-red-700 text-xl text-red-500 px-6"
+                class="rejected-btn btn btn-lg hover:bg-red-500 hover:text-white hover:border-none border-2 border-red-700 text-xl text-red-500 px-6"
               >
                 REJECTED
               </button>
@@ -294,7 +300,7 @@ function randerRejected() {
 
           <!-- part 2 delet btn -->
           <div class="delet-btn text-2xl">
-            <img src="./assets/delet-btn.png" alt="" class="w-12" />
+            <img src="./assets/delet-btn.png" alt="" class="w-16" />
           </div>
     `;
     rejectedSection.appendChild(div);
