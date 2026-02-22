@@ -20,7 +20,6 @@ const allcardSections = document.getElementById("allCard");
 
 // main container sections
 const mainContianers = document.querySelector("main");
-console.log(mainContianers);
 
 function calculateCount() {
   total.innerText = allcardSections.children.length;
@@ -55,3 +54,30 @@ function toggle(id) {
     "font-semibold",
   );
 }
+
+//main container sections
+mainContianers.addEventListener("click", function (evnet) {
+  const parentNode = evnet.target.parentNode.parentNode;
+  const jobName = parentNode.querySelector(".jobName").innerText;
+  const jobTitle = parentNode.querySelector(".jobTitle").innerText;
+  const remoteJob = parentNode.querySelector(".remoteJob").innerText;
+  const notApplied = parentNode.querySelector(".notApplied").innerText;
+  const peragraph = parentNode.querySelector(".peragraph").innerText;
+
+  const JobInfo = {
+    jobName,
+    jobTitle,
+    remoteJob,
+    notApplied,
+    peragraph,
+  };
+
+  console.log(JobInfo);
+
+  const planExistiong = interviewList.find(
+    (item) => item.jobName == JobInfo.jobName,
+  );
+  if (!planExistiong) {
+    interviewList.push(JobInfo);
+  }
+});
