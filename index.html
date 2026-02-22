@@ -30,15 +30,15 @@
         <div
           class="bg-[#F1F2F4] p-5 space-y-2 rounded-md border-gray-200 border-2"
         >
-          <h2>Rejected</h2>
-          <p id="rejected" class="text-green-500">0</p>
+          <h2>Interview</h2>
+          <p id="interview" class="text-green-500">0</p>
         </div>
         <!-- Rejected -->
         <div
           class="bg-[#F1F2F4] p-5 space-y-2 rounded-md border-gray-200 border-2"
         >
-          <h2>Interview</h2>
-          <p id="interview" class="text-red-500">0</p>
+          <h2>Rejected</h2>
+          <p id="rejected" class="text-red-500">0</p>
         </div>
       </nav>
     </header>
@@ -52,12 +52,12 @@
               Available Jobs
             </h2>
             <div class="flex items-center gap-3 text-2xl font-semibold">
-              <p>0</p>
+              <p id="total-job">0</p>
               <p>Jobs</p>
             </div>
           </div>
 
-          <div class="flex flex-col md:flex-row gap-5 py-5">
+          <div class="flex flex-col md:flex-row gap-5 text-xl py-5">
             <button
               onclick="toggle('all-filter-btn')"
               id="all-filter-btn"
@@ -92,24 +92,22 @@
           <!-- part 1 -->
           <div class="space-y-5">
             <div>
-              <h2 class="mobileFirst text-2xl font-bold text-[#002C5C]">
+              <h2 class="jobName text-2xl font-bold text-[#002C5C]">
                 Mobile First Corp
               </h2>
-              <p class="reactNative text-xl text-[#64748B]">
+              <p class="jobTitle text-xl text-[#64748B]">
                 React Native Developer
               </p>
             </div>
 
-            <p class="remote text-[#64748B] text-xl">
+            <p class="remoteJob text-[#64748B] text-xl">
               Remote • Full-time • $130,000 - $175,000
             </p>
 
-            <button
-              class="notApplied btn btn-soft text-xl btn-2xl text-[#002C5C]"
-            >
+            <button class="nots btn btn-soft text-xl btn-2xl text-[#002C5C]">
               NOT APPLIED
             </button>
-            <p class="build text-xl text-[#323B49]">
+            <p class="peragraph text-xl text-[#323B49]">
               Build cross-platform mobile applications using React Native. Work
               on products used by millions of users worldwide.
             </p>
@@ -496,5 +494,8 @@
         </div>
       </section>
     </main>
+
+    <!-- script file  -->
+    <script src="./js/count.js"></script>
   </body>
 </html>
