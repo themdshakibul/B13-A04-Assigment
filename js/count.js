@@ -2,7 +2,6 @@
 let interviewList = [];
 let rejectedList = [];
 let currentCount = "all";
-let counts = [];
 
 let total = document.getElementById("total");
 let interview = document.getElementById("interview");
@@ -10,12 +9,15 @@ let rejected = document.getElementById("rejected");
 
 // total jobs
 const totalJobs = document.getElementById("total-job");
-const count = document.querySelector(".count");
+const countInt = document.querySelector(".countInt");
+const countRej = document.querySelector(".countRej");
+const name = document.querySelector(".name");
 
 // all filter btn
 const allFileterBtn = document.getElementById("all-filter-btn");
 const interviewFilterBtn = document.getElementById("interview-filter-btn");
 const rejectedFilterBtn = document.getElementById("rejected-filter-btn");
+const allSectionBtn = document.getElementById("allSectionBtn");
 
 // all card sections
 const allcardSections = document.getElementById("allCard");
@@ -30,10 +32,10 @@ function calculateCount() {
   totalJobs.innerText = allcardSections.children.length;
 
   interview.innerText = interviewList.length;
-  count.innerText = interviewList.length;
+  countInt.innerText = interviewList.length;
 
   rejected.innerText = rejectedList.length;
-  count.innerText = rejectedList.length;
+  countRej.innerText = rejectedList.length;
 }
 
 calculateCount();
@@ -66,14 +68,26 @@ function toggle(id) {
     allcardSections.classList.add("hidden");
     filterSection.classList.remove("hidden");
     rejectedSection.classList.add("hidden");
+
+    countInt.classList.remove("hidden");
+    countRej.classList.add("hidden");
+    name.classList.remove("hidden");
   } else if (id == "all-filter-btn") {
     allcardSections.classList.remove("hidden");
     filterSection.classList.add("hidden");
     rejectedSection.classList.add("hidden");
+
+    countInt.classList.add("hidden");
+    countRej.classList.add("hidden");
+    name.classList.add("hidden");
   } else if (id == "rejected-filter-btn") {
     allcardSections.classList.add("hidden");
     filterSection.classList.add("hidden");
     rejectedSection.classList.remove("hidden");
+
+    countInt.classList.add("hidden");
+    countRej.classList.remove("hidden");
+    name.classList.remove("hidden");
   }
 }
 
@@ -88,7 +102,6 @@ mainContianers.addEventListener("click", function (evnet) {
     const peragraph = parentNode.querySelector(".peragraph").innerText;
 
     parentNode.querySelector(".notApplied").innerText = "INTERVIEW";
-
     const JobInfo = {
       jobName,
       jobTitle,
@@ -153,6 +166,22 @@ mainContianers.addEventListener("click", function (evnet) {
     calculateCount();
     randerInterview();
     randerRejected();
+  } else if (evnet.target.closest(".delet-btn")) {
+    const card = evnet.target.closest(".cards");
+    const jobName = card.querySelector(".jobName").innerText;
+
+    interviewList = interviewList.filter((item) => item.jobName !== jobName);
+    rejectedList = rejectedList.filter((item) => item.jobName !== jobName);
+
+    card.remove();
+    calculateCount();
+    randerInterview();
+    randerRejected();
+
+    const cards = document.getElementsByClassName("cards");
+    if (cards.length == 0) {
+      allSectionBtn.classList.remove("hidden");
+    }
   }
 });
 
